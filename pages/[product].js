@@ -15,6 +15,7 @@ const Products = (props) => {
     return (
         <div>
             <h1>{loadedproduct.title}</h1>
+            <p>{loadedproduct.description}</p>
         </div>
     )
 }
@@ -55,8 +56,13 @@ export async function  getStaticProps(context){
 export async function getStaticPaths(){
 
     const data = await getData()
-    const ids = data.products.map((item) => item.id )
-    const getid = ids.map((item) => ({ params :{ product: item}}) )
+    // const getid = data.products.map((item) =>  ({ params :{ product: item.id}}) )
+    let getid;
+
+    for( let {id} of data.products){
+        // ide = id
+        getid = [{ params :{ product: id}}]
+    }
 
     return {
         paths: getid,

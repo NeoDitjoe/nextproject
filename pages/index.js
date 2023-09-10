@@ -16,6 +16,8 @@ export default function Home(props) {
     </ul>
   )
 }
+
+
 export async function getStaticProps(){
 
   const filePath = path.join(process.cwd(), 'data', 'thedata.json')
