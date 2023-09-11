@@ -1,7 +1,5 @@
-// import { getStaticProps } from '.';
 import fs from 'fs/promises';
 import path from "path";
-// import { getStaticPaths } from 'next'
 
 const Products = (props) => {
     const { loadedproduct } = props
@@ -60,7 +58,6 @@ export async function getStaticPaths(){
     let getid;
 
     for( let {id} of data.products){
-        // ide = id
         getid = [{ params :{ product: id}}]
     }
 

@@ -13,6 +13,8 @@ export default function Home(props) {
       { products.map(product => (
         <li key={product.id}> <Link href={`/${product.id}`}> {product.title}</Link> </li>
       ))}
+      <li><Link href={'/user-profile'}>User-Profile</Link></li>
+      <li><Link href={'/last-sales'}>Last Sales</Link></li>
     </ul>
   )
 }
